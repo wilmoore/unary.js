@@ -1,0 +1,21 @@
+before_install:
+  - npm install npm --global
+before_script:
+  - npm prune
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - node_modules
+language: node_js
+node_js:
+  - '4.1'
+  - '4.0'
+  - '0.12'
+  - 'iojs'
+notifications:
+  email: true
+script:
+  - npm test --silent
+sudo: false
